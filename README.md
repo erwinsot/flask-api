@@ -276,14 +276,14 @@ Ventajas:
 - ✅ Intercambiable: Cambiar algoritmos en runtime (ej: prioridad baja → email, alta → SMS)
 - ✅ Testeabilidad: Cada estrategia puede probarse aisladamente
 
-  ```code
+```code
   class NotificationStrategy:
     def execute(self, user, message):
         for channel in user.get_channels_in_order():
             if channel.send(message):
                 return SuccessResult(channel)
         return FailedResult()
-   ```
+```
 
 3. Repository (Repositorio)
 Aplicación:
