@@ -100,6 +100,7 @@ curl -X POST http://localhost:5000/notifications/send -H "Content-Type: applicat
 
 ### 🧪 Ejemplos de Respuestas
 ✅ Registro Exitoso
+- 201 Created 
 
 ```json
 {
@@ -109,7 +110,8 @@ curl -X POST http://localhost:5000/notifications/send -H "Content-Type: applicat
 }
 ```
 ✅ Notificación Entregada
-
+- 200 OK
+  
 ```json
 {
   "user_name": "Juan",
@@ -118,6 +120,9 @@ curl -X POST http://localhost:5000/notifications/send -H "Content-Type: applicat
   "status": "DELIVERED",
   "delivered_via": "email"
 }
+
+- 404 Not Found (usuario no existe)
+- 424 Failed Dependency (todos los canales fallaron)
 
 ```
 ❌ Notificación Fallida
