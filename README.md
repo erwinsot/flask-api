@@ -1,7 +1,7 @@
 # 📬 Sistema de Notificación Multicanal
 
-**Autor:** [Tu nombre completo]  
-**Identificación:** [Tu número de documento]
+**Autor:** [Erwin Duban soto Sarmiento]  
+
 
 ---
 
