@@ -85,19 +85,6 @@ curl http://localhost:5000/users
 curl -X POST http://localhost:5000/notifications/send -H "Content-Type: application/json" -d "{\"user_name\":\"Juan\",\"message\":\"Su cita es mañana\",\"priority\":\"high\"}"
 ```
 
-### 🔄 Flujo de Notificaciones
-1. El cliente solicita enviar una notificación.
-
-2. El sistema busca al usuario en el repositorio.
-
-3. Intenta enviar usando el canal preferido.
-
-4. Si falla (simulación con random.choice([True, False])), prueba los canales alternativos.
-
-5. Registra cada intento en el log.
-
-6. Devuelve el estado final de la entrega.
-
 ### 🧪 Ejemplos de Respuestas
 ✅ Registro Exitoso
 - 201 Created 
@@ -137,6 +124,19 @@ curl -X POST http://localhost:5000/notifications/send -H "Content-Type: applicat
   "delivered_via": null
 }
 ```
+
+### 🔄 Flujo de Notificaciones
+1. El cliente solicita enviar una notificación.
+
+2. El sistema busca al usuario en el repositorio.
+
+3. Intenta enviar usando el canal preferido.
+
+4. Si falla (simulación con random.choice([True, False])), prueba los canales alternativos.
+
+5. Registra cada intento en el log.
+
+6. Devuelve el estado final de la entrega.
 ## Diagrama de Clases/Modules
 
 ```mermaid
