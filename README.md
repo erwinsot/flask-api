@@ -127,7 +127,7 @@ curl -X POST http://localhost:5000/notifications/send -H "Content-Type: applicat
 }
 ```
 ### 📈 Diagrama de Flujo
-
+```mermaid
 sequenceDiagram
     participant Cliente
     participant API
@@ -145,6 +145,8 @@ sequenceDiagram
     end
     Servicio-->>API: Resultado
     API-->>Cliente: Respuesta JSON
+
+```
 
 
 
