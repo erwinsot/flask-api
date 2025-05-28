@@ -51,8 +51,14 @@ Asegura que los logs se registren desde un único punto central.
 ```
 
 ## Ejemplo CURL
-```
-curl -X POST http://localhost:5000/users -H "Content-Type: application/json" -d "{\"name\":\"Juan\",\"preferred_channel\":\"email\",\"available_channels\":[\"email\",\"sms\"]}"
+```bash
+curl -X POST 'http://localhost:5000/users' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "name": "Ana",
+    "preferred_channel": "sms",
+    "available_channels": ["sms", "email"]
+  }'
 ```
 
 ### 2. 📋 Listar Usuarios
