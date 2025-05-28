@@ -48,3 +48,6 @@ Asegura que los logs se registren desde un único punto central.
   "preferred_channel": "email",
   "available_channels": ["email", "sms"]
 }
+
+curl -X POST http://localhost:5000/users -H "Content-Type: application/json" -d "{\"name\":\"Juan\",\"preferred_channel\":\"email\",\"available_channels\":[\"email\",\"sms\"]}"
+
