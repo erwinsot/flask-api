@@ -382,7 +382,7 @@ Este ejemplo muestra cómo registrar un nuevo usuario con su canal preferido y l
 
 ### 📄 Listar Usuarios
 
-![📥 Endpoint: Listar Usuarios](notification_system/docs/getUser2.png)
+![📥 Endpoint: Listar Usuarios](notification_system/docs/getUser.png)
 
 Este ejemplo muestra cómo obtener la lista de todos los usuarios registrados en el sistema.
 
