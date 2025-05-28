@@ -397,6 +397,27 @@ Si el canal preferido falla, se intenta con los canales alternativos de forma au
 ![📬 Endpoint: Enviar Notificación](notification_system/docs/alternative.png)
 
 
+## 📘 Documentación Swagger
+
+Para facilitar la comprensión y prueba de los endpoints de esta API, se incluye una documentación generada con **Swagger** (OpenAPI 3).
+
+### 🔗 Acceso a la documentación interactiva
+
+Una vez que la aplicación esté corriendo localmente, puedes acceder a la interfaz Swagger desde:
+
+```link
+http://localhost:5000/api/docs/
+
+```
+
+![📬 Endpoint: Documentacion Endpoints ](notification_system/docs/swagger.png)
+
+
+
+
+
+
+
 
 
 
