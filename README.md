@@ -345,6 +345,12 @@ source venv/bin/activate
 ```code
 pip install -r requirements.txt
 ```
+
+### Iniciar la Aplicación
+```code
+flask run --port=5000 --debug
+o python main.py 
+```
   
 
 
