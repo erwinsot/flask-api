@@ -1,6 +1,6 @@
 # 📬 Sistema de Notificación Multicanal
 
-**Autor:** [Erwin Duban soto Sarmiento]  
+**Autor:** Erwin Duban soto Sarmiento  
 
 
 ---
