@@ -217,9 +217,9 @@ Aplicación:
 En el flujo de notificaciones (Email → SMS → Console)
 
 Ventajas:
-✔ Desacoplamiento: Cada handler no conoce qué otros handlers existen
-✔ Flexibilidad: Añadir/eliminar canales sin modificar el código cliente
-✔ Fallback automático: Si un canal falla, la petición pasa al siguiente
+- ✅ Desacoplamiento: Cada handler no conoce qué otros handlers existen
+- ✅ Flexibilidad: Añadir/eliminar canales sin modificar el código cliente
+- ✅ Fallback automático: Si un canal falla, la petición pasa al siguiente
 
 ```code
 class NotificationHandler(ABC):
