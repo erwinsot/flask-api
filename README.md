@@ -95,7 +95,7 @@ curl -X POST http://localhost:5000/notifications/send -H "Content-Type: applicat
 ### 🧪 Ejemplos de Respuestas
 ✅ Registro Exitoso
 
-```
+```json
 {
   "name": "Juan",
   "preferred_channel": "email",
@@ -104,7 +104,7 @@ curl -X POST http://localhost:5000/notifications/send -H "Content-Type: applicat
 ```
 ✅ Notificación Entregada
 
-```
+```json
 {
   "user_name": "Juan",
   "message": "Su cita es mañana",
@@ -116,7 +116,7 @@ curl -X POST http://localhost:5000/notifications/send -H "Content-Type: applicat
 ```
 ❌ Notificación Fallida
 
-```
+```json
 
   {
   "user_name": "Juan",
