@@ -316,6 +316,35 @@ Resuelven problemas específicos:
 - Nuevos canales (WhatsApp, push notifications)
 
 - Nuevas estrategias (ej: envío por geolocalización)
+
+###🛠️ Setup del Proyecto: Sistema de Notificación Multicanal
+## Requisitos Previos
+- Python 3.8+
+- pip (gestor de paquetes)
+
+### 1. Clonar el Repositorio
+
+```code
+git clone https://github.com/tu-usuario/notification-system.git
+cd notification-system
+```
+
+### 2. Configurar Entorno Virtual
+
+```code
+# Crear entorno virtual (Windows)
+python -m venv venv
+.\venv\Scripts\activate
+
+# Crear entorno virtual (Linux/MacOS)
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### 3. Instalar Dependencias
+```code
+pip install -r requirements.txt
+```
   
 
 
