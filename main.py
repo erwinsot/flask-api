@@ -1,4 +1,3 @@
-#from adapters.primary.web.flask_app import create_app
 from notification_system.adapters.primary.web.flask_app import create_app
 app = create_app()
 

@@ -2,14 +2,14 @@ from typing import List
 from ..domain.models import User, Notification
 from ..domain.ports.user_repository import UserRepository
 from ..domain.services import NotificationService
-from ..domain.models import ChannelType, NotificationPriority  # Relative import within package
+from ..domain.models import ChannelType, NotificationPriority 
 
 class UserUseCases:
     def __init__(self, user_repository: UserRepository):
         self.user_repository = user_repository
     
     def register_user(self, name: str, preferred_channel: str, available_channels: List[str]) -> User:
-        # Convert strings to enums
+        
         pref_channel_enum = ChannelType[preferred_channel.upper()]
         avail_channels_enum = [ChannelType[ch.upper()] for ch in available_channels]
         

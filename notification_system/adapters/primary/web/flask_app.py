@@ -2,9 +2,8 @@ from flask import Flask, send_from_directory
 from .controllers import UserController, NotificationController
 from notification_system.adapters.secondary.notification_handlers import (ConsoleNotificationHandler, EmailNotificationHandler, SMSNotificationHandler)
 from ...secondary.in_memory_user_repository import InMemoryUserRepository
-#from ..secondary.in_memory_user_repository import InMemoryUserRepository
 from ....domain.services import NotificationService
-#from ...domain.services import NotificationService
+
 from ....application.use_cases import UserUseCases, NotificationUseCases
 from .swagger import swagger_ui_blueprint, SWAGGER_URL
 import logging 

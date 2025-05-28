@@ -1,8 +1,7 @@
 from flask import jsonify, request
 from notification_system.application.use_cases import UserUseCases, NotificationUseCases
-#from ...application.use_cases import UserUseCases, NotificationUseCases
 from notification_system.application.dto import UserDTO, NotificationDTO
-#from ...application.dto import UserDTO, NotificationDTO
+
 
 class UserController:
     def __init__(self, user_use_cases: UserUseCases):

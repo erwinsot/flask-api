@@ -2,8 +2,7 @@ import logging
 
 from notification_system.domain.models import ChannelType, Notification
 from notification_system.domain.ports.notification import NotificationHandler
-#from ..domain.models import ChannelType, Notification
-#from ..domain.ports.notification import NotificationHandler
+
 
 class ConsoleNotificationHandler(NotificationHandler):
     def handle(self, notification: Notification, user_channels: list) -> Notification:

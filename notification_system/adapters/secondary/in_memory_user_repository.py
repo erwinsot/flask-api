@@ -1,8 +1,7 @@
 from typing import List, Optional, Dict
 from notification_system.domain.models import User
 from notification_system.domain.ports.user_repository import UserRepository
-#from ..domain.models import User
-#from ..domain.ports.user_repository import UserRepository
+
 
 class InMemoryUserRepository(UserRepository):
     def __init__(self):
