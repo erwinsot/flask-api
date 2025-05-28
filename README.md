@@ -233,4 +233,56 @@ class NotificationHandler(ABC):
             return self.next_handler.handle(user, message)
 ```
 
+2. Strategy (Estrategia)
+Aplicación:
+
+Selección dinámica del canal preferido vs. canales alternativos
+
+Ventajas:
+- ✅ Intercambiable: Cambiar algoritmos en runtime (ej: prioridad baja → email, alta → SMS)
+- ✅ Intercambiable: Cambiar algoritmos en runtime (ej: prioridad baja → email, alta → SMS)
+- ✅ Testeabilidad: Cada estrategia puede probarse aisladamente
+
+  ```code
+  class NotificationStrategy:
+    def execute(self, user, message):
+        for channel in user.get_channels_in_order():
+            if channel.send(message):
+                return SuccessResult(channel)
+        return FailedResult()
+   ```
+
+3. Repository (Repositorio)
+Aplicación:
+
+Gestión de usuarios en memoria (UserRepository)
+
+Ventajas:
+- ✅ Abstracción: Oculta detalles de almacenamiento (podría cambiarse a DB sin afectar el dominio)
+- ✅ Single Responsibility: Centraliza toda lógica de acceso a datos
+
+¿Por qué estos patrones?
+Resuelven problemas específicos:
+
+- Chain of Responsibility → Enrutamiento multicanal
+
+- Strategy → Variabilidad en políticas de envío
+
+- Repository → Persistencia desacoplada
+
+- Cumplen principios SOLID:
+
+- Open/Closed: Nuevos canales no modifican código existente
+
+- Dependency Inversion: Depende de abstracciones (handlers, repositorios)
+
+- Escalabilidad:
+
+- Patrones permiten añadir fácilmente:
+
+- Nuevos canales (WhatsApp, push notifications)
+
+- Nuevas estrategias (ej: envío por geolocalización)
+  
+
 
