@@ -346,11 +346,27 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### Iniciar la Aplicación
+### 4. Iniciar la Aplicación
 ```code
 flask run --port=5000 --debug
 o python main.py 
 ```
+
+🛠️ Testeo de la Aplicación
+Puedes probar la API utilizando herramientas como:
+
+🧪 cURL (desde la terminal)
+
+💻 Postman (interfaz gráfica para testing de APIs)
+
+🌙 Insomnia (alternativa liviana a Postman)
+
+✅ Recomendación
+Para desarrollo y pruebas rápidas:
+
+Usa Postman o Insomnia si prefieres una interfaz amigable con historial de peticiones.
+
+Usa cURL si prefieres trabajar desde la terminal o scripts automatizados.
   
 
 
