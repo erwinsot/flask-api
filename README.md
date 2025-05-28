@@ -121,11 +121,11 @@ curl -X POST http://localhost:5000/notifications/send -H "Content-Type: applicat
   "delivered_via": "email"
 }
 
+``` 
+❌ Notificación Fallida
 - 404 Not Found (usuario no existe)
 - 424 Failed Dependency (todos los canales fallaron)
 
-```
-❌ Notificación Fallida
 
 ```json
 
