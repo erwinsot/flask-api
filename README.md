@@ -353,7 +353,7 @@ flask run --port=5000 --debug
 o python main.py 
 ```
 
-###🛠️ Testeo de la Aplicación
+# Testeo de la Aplicación
 - Puedes probar la API utilizando herramientas como:
 
 🧪 cURL (desde la terminal)
