@@ -361,7 +361,6 @@ o python main.py
 💻 Postman (interfaz gráfica para testing de APIs)
 
 🌙 Insomnia (alternativa liviana a Postman)
-
 ✅ Recomendación
 Para desarrollo y pruebas rápidas:
 
