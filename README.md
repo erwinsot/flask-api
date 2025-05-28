@@ -369,9 +369,32 @@ Usa Postman o Insomnia si prefieres una interfaz amigable con historial de petic
 Usa cURL si prefieres trabajar desde la terminal o scripts automatizados.
 
 
-## Ejemplos de Uso
 
-![Endpoint de agregar Usuario](notification_system/docs/addUser.png)
+## 📌 Ejemplos de Uso
+
+A continuación, se muestran ejemplos de uso de la API utilizando Postman o herramientas similares como Insomnia o cURL.
+
+### ✅ Crear un Usuario
+
+![📤 Endpoint: Agregar Usuario](notification_system/docs/addUser.png)
+
+Este ejemplo muestra cómo registrar un nuevo usuario con su canal preferido y los canales disponibles.
+
+### 📄 Listar Usuarios
+
+![📥 Endpoint: Listar Usuarios](docs/listUsers.png)
+
+Este ejemplo muestra cómo obtener la lista de todos los usuarios registrados en el sistema.
+
+### 📨 Enviar Notificación
+
+![📬 Endpoint: Enviar Notificación](docs/sendNotification.png)
+
+Este ejemplo muestra cómo enviar una notificación a un usuario.  
+Si el canal preferido falla, se intenta con los canales alternativos de forma automática.
+
+
+
 
 
 
