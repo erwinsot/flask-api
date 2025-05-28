@@ -126,6 +126,68 @@ curl -X POST http://localhost:5000/notifications/send -H "Content-Type: applicat
   "delivered_via": null
 }
 ```
+## Diagrama de Clases/Modules
+
+```mermaid
+classDiagram
+    class NotificationService {
+        +send_notification(user_name, message, priority) NotificationResult
+        -user_repository: UserRepository
+        -handler_chain: NotificationHandler
+    }
+
+    class UserRepository {
+        +add_user(user: User) 
+        +find_user(name: str) User
+        -users: dict
+    }
+
+    class User {
+        +name: str
+        +preferred_channel: str
+        +available_channels: list[str]
+    }
+
+    class NotificationHandler {
+        <<abstract>>
+        +set_next(handler: NotificationHandler)
+        +handle(user: User, message: str) bool
+    }
+
+    class EmailHandler {
+        -next_handler: NotificationHandler
+        +handle(user: User, message: str) bool
+    }
+
+    class SMSHandler {
+        -next_handler: NotificationHandler
+        +handle(user: User, message: str) bool
+    }
+
+    class ConsoleHandler {
+        -next_handler: NotificationHandler
+        +handle(user: User, message: str) bool
+    }
+
+    class NotificationResult {
+        +user_name: str
+        +message: str
+        +status: str
+        +channel_used: str
+        +attempts: int
+    }
+
+    NotificationService --> UserRepository
+    NotificationService --> NotificationHandler
+    UserRepository --> User
+    NotificationHandler <|-- EmailHandler
+    NotificationHandler <|-- SMSHandler
+    NotificationHandler <|-- ConsoleHandler
+    NotificationHandler --> NotificationHandler : next_handler
+    NotificationService --> NotificationResult
+```
+
+
 ### 📈 Diagrama de Flujo
 ```mermaid
 sequenceDiagram
