@@ -317,7 +317,8 @@ Resuelven problemas específicos:
 
 - Nuevas estrategias (ej: envío por geolocalización)
 
-###🛠️ Setup del Proyecto: Sistema de Notificación Multicanal
+
+### Setup del Proyecto: Sistema de Notificación Multicanal
 ## Requisitos Previos
 - Python 3.8+
 - pip (gestor de paquetes)
