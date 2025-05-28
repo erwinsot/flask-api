@@ -368,9 +368,11 @@ Usa Postman o Insomnia si prefieres una interfaz amigable con historial de petic
 
 Usa cURL si prefieres trabajar desde la terminal o scripts automatizados.
 
+
 ## Ejemplos de Uso
 
 ![Endpoint de agregar Usuario](docs/addUser.png)
+
 
 
   
