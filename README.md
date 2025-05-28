@@ -44,9 +44,12 @@ Asegura que los logs se registren desde un único punto central.
 #### Body JSON
 ```json
 {
-  "name": "Juan",
-  "preferred_channel": "email",
-  "available_channels": ["email", "sms"]
+    "name": "Pepe",
+    "preferred_channel": "sms",
+    "available_channels": [
+        "email",
+        "sms"
+    ]
 }
 ```
 
@@ -91,21 +94,40 @@ curl -X POST http://localhost:5000/notifications/send -H "Content-Type: applicat
 
 ```json
 {
-  "name": "Juan",
-  "preferred_channel": "email",
-  "available_channels": ["email", "sms"]
+    "available_channels": [
+        "EMAIL",
+        "SMS"
+    ],
+    "name": "Pepe",
+    "preferred_channel": "SMS"
 }
 ```
+✅ Obtener usuarios
+- 200 OK
+  
+```json
+[
+    {
+        "available_channels": [
+            "EMAIL",
+            "SMS"
+        ],
+        "name": "Pepe",
+        "preferred_channel": "SMS"
+    }
+]
+```
+
 ✅ Notificación Entregada
 - 200 OK
   
 ```json
 {
-  "user_name": "Juan",
-  "message": "Su cita es mañana",
-  "priority": "high",
-  "status": "DELIVERED",
-  "delivered_via": "email"
+    "delivered_via": "EMAIL",
+    "message": "Your appointment is tomorrow",
+    "priority": "high",
+    "status": "DELIVERED",
+    "user_name": "Pepe"
 }
 
 ``` 
