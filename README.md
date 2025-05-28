@@ -371,7 +371,7 @@ Usa cURL si prefieres trabajar desde la terminal o scripts automatizados.
 
 ## Ejemplos de Uso
 
-![Endpoint de agregar Usuario](docs/addUser.png)
+![Endpoint de agregar Usuario](notification_system/docs/addUser.png)
 
 
 
