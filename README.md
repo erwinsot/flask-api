@@ -55,3 +55,98 @@ Asegura que los logs se registren desde un único punto central.
 curl -X POST http://localhost:5000/users -H "Content-Type: application/json" -d "{\"name\":\"Juan\",\"preferred_channel\":\"email\",\"available_channels\":[\"email\",\"sms\"]}"
 ```
 
+### 2. 📋 Listar Usuarios
+`GET /users`
+
+## Ejemplo CURL
+```
+curl http://localhost:5000/users
+```
+### 3. 🚀 Enviar Notificación
+`POST /notifications/send`
+
+#### Body JSON
+```json
+{
+  "user_name": "Juan",
+  "message": "Su cita es mañana",
+  "priority": "high"
+}
+```
+
+## Ejemplo CURL
+```
+curl -X POST http://localhost:5000/notifications/send -H "Content-Type: application/json" -d "{\"user_name\":\"Juan\",\"message\":\"Su cita es mañana\",\"priority\":\"high\"}"
+```
+
+### 🔄 Flujo de Notificaciones
+1. El cliente solicita enviar una notificación.
+
+2. El sistema busca al usuario en el repositorio.
+
+3. Intenta enviar usando el canal preferido.
+
+4. Si falla (simulación con random.choice([True, False])), prueba los canales alternativos.
+
+5. Registra cada intento en el log.
+
+6. Devuelve el estado final de la entrega.
+
+### 🧪 Ejemplos de Respuestas
+✅ Registro Exitoso
+
+```
+{
+  "name": "Juan",
+  "preferred_channel": "email",
+  "available_channels": ["email", "sms"]
+}
+```
+✅ Notificación Entregada
+
+```
+{
+  "user_name": "Juan",
+  "message": "Su cita es mañana",
+  "priority": "high",
+  "status": "DELIVERED",
+  "delivered_via": "email"
+}
+
+```
+❌ Notificación Fallida
+
+```
+
+  {
+  "user_name": "Juan",
+  "message": "Su cita es mañana",
+  "priority": "high",
+  "status": "FAILED (all channels)",
+  "delivered_via": null
+}
+```
+### 📈 Diagrama de Flujo
+
+sequenceDiagram
+    participant Cliente
+    participant API
+    participant Servicio
+    participant Handlers
+    
+    Cliente->>API: POST /notifications/send
+    API->>Servicio: send_notification()
+    Servicio->>Servicio: Obtener usuario
+    loop Por cada canal
+        Servicio->>Handlers: ¿Puedes manejar este canal?
+        Handlers-->>Servicio: Sí/No
+        Servicio->>Handlers: handle()
+        Handlers-->>Servicio: Resultado
+    end
+    Servicio-->>API: Resultado
+    API-->>Cliente: Respuesta JSON
+
+
+
+
+
