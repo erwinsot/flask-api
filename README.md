@@ -210,7 +210,27 @@ sequenceDiagram
 
 ```
 
+### Justificación de Patrones de Diseño
+1. Chain of Responsibility (Cadena de Responsabilidad)
+Aplicación:
 
+En el flujo de notificaciones (Email → SMS → Console)
 
+Ventajas:
+✔ Desacoplamiento: Cada handler no conoce qué otros handlers existen
+✔ Flexibilidad: Añadir/eliminar canales sin modificar el código cliente
+✔ Fallback automático: Si un canal falla, la petición pasa al siguiente
+
+```code
+class NotificationHandler(ABC):
+    def set_next(self, handler):
+        self.next_handler = handler
+
+    def handle(self, user, message):
+        if self.can_handle(user):
+            return self.send(message)
+        elif self.next_handler:
+            return self.next_handler.handle(user, message)
+```
 
 
